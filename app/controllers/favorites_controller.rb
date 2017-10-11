@@ -12,6 +12,6 @@ class FavoritesController < ApplicationController
     micropost = Micropost.find(params[:micropost_id]) 
     current_user.unset_favorite(micropost) 
     flash[:success] = 'お気に入りを外しました。' 
-    redirect_to user
+    redirect_to user_path(micropost.user_id)
   end
 end
